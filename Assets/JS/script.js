@@ -32,7 +32,7 @@ function initPage() {
                 currentPicEl.setAttribute("alt", response.data.weather[0].description);
                 currentTempEl.innerHTML = "Temperature: " + k2c(response.data.main.temp) + "&#176C";
                 currentHumidityEl.innerHTML = "Humidity: " + response.data.main.humidity + "%";
-                currentWindEl.innerHTML = "Wind Speed: " + response.data.wind.speed + " MPH";
+                currentWindEl.innerHTML = "Wind Speed: " + k2m(response.data.wind.speed) + " KM/H";
                 
                 let lat = response.data.coord.lat;
                 let lon = response.data.coord.lon;
@@ -105,6 +105,10 @@ function initPage() {
 
     function k2c(K) {
         return Math.floor((K - 273.15));
+    }
+
+    function k2m(K) {
+        return Math.floor((K * 1.60934));
     }
 
     function renderSearchHistory() {
