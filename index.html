@@ -15,4 +15,24 @@
           <h1>Weather Dashboard</h1>
       </header>
 
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 bg-light">
+                <h5 class="mt-1">Search for a City:</h5>
+                <div class="input-group mb-3">
+                    <input id="enter-city" type="text" class="form-control" placeholder="Enter a city" aria-label="Enter a city">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark" type="button" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn btn-dark mb-3" type="button" id="clear-history">Clear history</button>
+                <form id="history"></form>
+            </div>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
