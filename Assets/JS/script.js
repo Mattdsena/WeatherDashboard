@@ -13,8 +13,10 @@ function initPage() {
     var todayweatherEl = document.getElementById("today-weather");
     let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
+// Unique API
     const APIKey = "e8701df6630ba85b331ce41ac7a759cc";
 
+// Current Weather from open weather api    
     function getWeather(cityName) {
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
         axios.get(queryURL)
@@ -22,6 +24,7 @@ function initPage() {
 
                 todayweatherEl.classList.remove("d-none");
 
+// Displays current weather of searched city                
                 const currentDate = new Date(response.data.dt * 1000);
                 const day = currentDate.getDate();
                 const month = currentDate.getMonth() + 1;
@@ -33,7 +36,8 @@ function initPage() {
                 currentTempEl.innerHTML = "Temperature: " + k2c(response.data.main.temp) + "&#176C";
                 currentHumidityEl.innerHTML = "Humidity: " + response.data.main.humidity + "%";
                 currentWindEl.innerHTML = "Wind Speed: " + k2m(response.data.wind.speed) + " KM/H";
-                
+
+// UV Index                
                 let lat = response.data.coord.lat;
                 let lon = response.data.coord.lon;
                 let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1";
@@ -41,6 +45,7 @@ function initPage() {
                     .then(function (response) {
                         let UVIndex = document.createElement("span");
                         
+// Display greem, yellow, red depending on UV
                         if (response.data[0].value < 4 ) {
                             UVIndex.setAttribute("class", "badge badge-success");
                         }
@@ -56,12 +61,14 @@ function initPage() {
                         currentUVEl.append(UVIndex);
                     });
                 
+// Get a 5 day forecast for searched city 
                 let cityID = response.data.id;
                 let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + APIKey;
                 axios.get(forecastQueryURL)
                     .then(function (response) {
                         fivedayEl.classList.remove("d-none");
                         
+// Display forecast for next 5 days
                         const forecastEls = document.querySelectorAll(".forecast");
                         for (i = 0; i < forecastEls.length; i++) {
                             forecastEls[i].innerHTML = "";
@@ -74,6 +81,8 @@ function initPage() {
                             forecastDateEl.setAttribute("class", "mt-3 mb-0 forecast-date");
                             forecastDateEl.innerHTML = forecastDay + "/" + forecastMonth + "/" + forecastYear;
                             forecastEls[i].append(forecastDateEl);
+
+// Icon for current Weather
                             const forecastWeatherEl = document.createElement("img");
                             forecastWeatherEl.setAttribute("src", "https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
                             forecastWeatherEl.setAttribute("alt", response.data.list[forecastIndex].weather[0].description);
@@ -89,6 +98,7 @@ function initPage() {
             });
     }
 
+// History from local storage 
     searchEl.addEventListener("click", function () {
         const searchTerm = cityEl.value;
         getWeather(searchTerm);
@@ -97,16 +107,19 @@ function initPage() {
         renderSearchHistory();
     })
 
+// Clear History
     clearEl.addEventListener("click", function () {
         localStorage.clear();
         searchHistory = [];
         renderSearchHistory();
     })
 
+// Kelvin to Celcius    
     function k2c(K) {
         return Math.floor((K - 273.15));
     }
 
+// Miles to Kilometres
     function k2m(K) {
         return Math.floor((K * 1.60934));
     }
