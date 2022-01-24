@@ -9,24 +9,26 @@ On from that the user requested to see UV levels and whether they are favourable
 
 Below you will see the mock up example we were given as a template
 
-Our task was to create a work day scheduler. We were given a starter code and had a few hints on what id's or classes we should use.
+![Mockup Example](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/06-server-side-apis-homework-demo.png)
 
-Below you will see the mock up example we were given & what the starter code looked like
+Firstly, I just made sure that my html was simple and matched the example to the best of my ability, I then signed up for the open weather api, gaining my unqiue key
 
-![Mockup Example](https://github.com/Mattdsena/WorkDayScheduler/blob/main/Assets/Images/05-third-party-apis-homework-demo.gif)
-![Starter Code](https://github.com/Mattdsena/WorkDayScheduler/blob/main/Assets/Images/starter-code.jpg)
+Overall I thought it was pretty straight forward it was just that we had never done anything like this before.
 
-We needed to make the current day show on the page using by using moments and we could display it in anyway we wanted. Following that we needed to get the time blocks to be relevant to a 9-5 working day and then colour code them base on Past, Present & Future events.
+I had some issues with git guardian and an open api leak, see the images below 
 
-Majority of this was provided and it was just up to us to work the rest out
+![Gitguardian](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/git-guardian-email.jpg)
+![Gitguardian 2](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/git-guardian-issue.jpg)
 
-We had to give the user an option to save there date via a save button, these needed to still be present once the page was refreshed
+After Speaking to BCS on that I discovered it was ok but not good practice and we would learn more eventually
 
-Overall I am still struggling with functions and the JavaScript side of things, but I feel the more I do it, the better I am becoming, just need to do more and more practice.
-I felt a lot more confident when doing this task.
+I added the UV index as per next image
 
-Please see my final work day schedular in the image below as well as my link to the website
+![UV](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/uv-example.jpg)
 
-![Final](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/main-page.jpg)
+Please see my final Weather Dashboard when someone has searched and not yet searched in the images below as well as my link to the website
+
+![Final Searched](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/main-page.jpg)
+![Not Searched](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/no-search.jpg)
 
 https://mattdsena.github.io/WeatherDashboard/
