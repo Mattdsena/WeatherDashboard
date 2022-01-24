@@ -20,11 +20,13 @@ I had some issues with git guardian and an open api leak, see the images below
 ![Gitguardian](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/git-guardian-email.jpg)
 ![Gitguardian 2](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/git-guardian-issue.jpg)
 
-After Speaking to BCS on that I discovered it was ok but not good practice and we would learn more eventually
+After speaking to BCS on that I discovered it was ok but not good practice and we would learn more eventually
 
 I added the UV index as per next image
 
 ![UV](https://github.com/Mattdsena/WeatherDashboard/blob/main/Assets/Images/uv-example.jpg)
+
+I personally dont feel I could do the JavaScript side of it without doing external research, really want to learn more about how to get better at it, overall was another tough assignment.
 
 Please see my final Weather Dashboard when someone has searched and not yet searched in the images below as well as my link to the website
 
